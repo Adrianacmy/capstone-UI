@@ -4,19 +4,24 @@ By Adrianacmy
 
 ## Description
 
-- Crypto trading app part one, this part is a crypto news tracker
+Crypto trading app part one, this part is a crypto news tracker <br>
 
-- This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). Please check its docs for more setup instructions
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). Please check its docs for more setup instructions <br>
 
 ## Table of Contents
 
-- [How to start](#how-to-start)
+- [Install The Project](#install-the-project)
+- [Component/Route Structure](#component-structure)
+- [User Stories](#user-stories)
 - [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
   - [npm run deploy](#deployment)
   - [npm run eject](#npm-run-eject)
+- [Specifications](#specifications)
+- [Known bugs](#known-bugs)
+- [Technologies Used](#Technologies-Used)
 
 For the project to build, **these files must exist with exact filenames**:
 
@@ -30,11 +35,30 @@ You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t
 
 Only files inside `public` can be used from `public/index.html`.<br>
 
-## How to Start
+## Intall the Project
 
-Clone this project,`git clone ...`<br>
-Install independencies in root dir `npm install`<br>
-Run other commands or do something else
+1. Clone this project,`git clone ...`<br>
+
+2. Install independencies in root dir `npm install`<br>
+
+3. [Run other commands or do something else](#table-of-contents)
+
+## Component Structure
+
+```
+-----++
+
+```
+
+## User Stories(MVP)
+
+1. As a user, I can see industry news <br>
+2. As a user, I can see price charts of Crypto <br>
+3. As a user, I can add Crypto to my watchlist <br>
+4. As a user, I can remove Crypto from my watchlist<br>
+5. As a user, I can register an account<br>
+6. As a user, I can log in with my verified credentials <br>
+
 
 ## Available Scripts
 
@@ -112,6 +136,7 @@ Jest will always run all tests on a [continuous integration](#continuous-integra
 
 
 ### On CI servers
+
 #### Travis CI
 
 1. Following the [Travis Getting started](https://docs.travis-ci.com/user/getting-started/) guide for syncing your GitHub repository with Travis.  You may need to initialize some settings manually in your [profile](https://travis-ci.org/profile) page.
@@ -129,7 +154,6 @@ script:
 ```
 1. Trigger your first build with a git push.
 1. [Customize your Travis CI Build](https://docs.travis-ci.com/user/customizing-the-build/) if needed.
-
 
 
 ## Deployment
@@ -223,4 +247,23 @@ GitHub Pages doesn’t support routers that use the HTML5 `pushState` history AP
 
 * You could switch from using HTML5 history API to routing with hashes. If you use React Router, you can switch to `hashHistory` for this effect, but the URL will be longer and more verbose (for example, `http://user.github.io/todomvc/#/todos/42?_k=yknaj`). [Read more](https://reacttraining.com/react-router/web/api/Router) about different history implementations in React Router.
 * Alternatively, you can use a trick to teach GitHub Pages to handle 404 by redirecting to your `index.html` page with a special redirect parameter. You would need to add a `404.html` file with the redirection code to the `build` folder before deploying your project, and you’ll need to add code handling the redirect parameter to `index.html`. You can find a detailed explanation of this technique [in this guide](https://github.com/rafrex/spa-github-pages).
+
+## Known Bugs
+
+- None for now
+
+## Technologies Used
+
+- JavaScript
+- React
+- Redux
+- Babel
+- Webpack
+- Create-React-App
+- React-materialize
+- Dajngo
+- Dajngo restfull
+
+
+
 
