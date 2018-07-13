@@ -275,6 +275,8 @@ GitHub Pages doesn’t support routers that use the HTML5 `pushState` history AP
 
 ## Thanks
 
+- [My API](https://github.com/Adrianacmy/capstone-API)
+- [CryptoCompare](https://min-api.cryptocompare.com/)
 
 ## Licence
 
