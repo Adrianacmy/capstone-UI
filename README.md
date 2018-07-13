@@ -45,10 +45,10 @@ Only files inside `public` can be used from `public/index.html`.<br>
 
 ## Component Structure
 
-```
------++
+- Blue is application state involved
+- The rest is static or component state involved
 
-```
+![diagrame](./src/assets/images/dia.png)
 
 ## User Stories(MVP)
 
