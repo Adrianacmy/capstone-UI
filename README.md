@@ -2,14 +2,10 @@
 
 By Adrianacmy
 
-## Description
-
-Crypto trading app part one, this part is a crypto news tracker <br>
-
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). Please check its docs for more setup instructions <br>
-
 ## Table of Contents
 
+- [Description](#description)
+- [Live Demo](#live-demo)
 - [Install The Project](#install-the-project)
 - [Component/Route Structure](#component-structure)
 - [User Stories](#user-stories)
@@ -22,6 +18,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [Specifications](#specifications)
 - [Known bugs](#known-bugs)
 - [Technologies Used](#Technologies-Used)
+
+
+## Description
+
+Crypto trading app part one, this part is a crypto news tracker <br>
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). Please check its docs for more setup instructions <br>
+
+## [Live Demo](http://adrianawritescode.com/capstone-UI/)
+
 
 For the project to build, **these files must exist with exact filenames**:
 
@@ -262,7 +268,8 @@ GitHub Pages doesn’t support routers that use the HTML5 `pushState` history AP
 - Create-React-App
 - React-materialize
 - Dajngo
-- Dajngo restfull
+- Dajngo restful framework
+- Django restful framework JWT
 
 
 
