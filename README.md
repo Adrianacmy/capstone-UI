@@ -6,18 +6,19 @@ By Adrianacmy
 
 - [Description](#description)
 - [Live Demo](#live-demo)
-- [Install The Project](#install-the-project)
+- [Install The Project](#Intall-the-Project)
 - [Component/Route Structure](#component-structure)
-- [User Stories](#user-stories)
+- [User Stories](#user-stories(mvp))
 - [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
   - [npm run deploy](#deployment)
   - [npm run eject](#npm-run-eject)
-- [Specifications](#specifications)
 - [Known bugs](#known-bugs)
 - [Technologies Used](#Technologies-Used)
+- [Thanks](#thanks)
+- [Licence](#licence)
 
 
 ## Description
@@ -27,19 +28,6 @@ Crypto trading app part one, this part is a crypto news tracker <br>
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). Please check its docs for more setup instructions <br>
 
 ## [Live Demo](http://adrianawritescode.com/capstone-UI/)
-
-
-For the project to build, **these files must exist with exact filenames**:
-
-* `public/index.html` is the page template;
-* `src/index.js` is the JavaScript entry point.
-
-You can delete or rename the other files.
-
-You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
-You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
-
-Only files inside `public` can be used from `public/index.html`.<br>
 
 ## Intall the Project
 
@@ -90,6 +78,19 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
+
+
+For the project to build, **these files must exist with exact filenames**:
+
+* `public/index.html` is the page template;
+* `src/index.js` is the JavaScript entry point.
+
+You can delete or rename the other files.
+
+You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
+You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
+
+Only files inside `public` can be used from `public/index.html`.<br>
 
 See the section about [deployment](#deployment) for more information.
 
@@ -272,5 +273,9 @@ GitHub Pages doesn’t support routers that use the HTML5 `pushState` history AP
 - Django restful framework JWT
 
 
+## Thanks
 
 
+## Licence
+
+- MIT
