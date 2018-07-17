@@ -9,7 +9,7 @@ class SinglePrice extends Component {
   }
 
   render() {
-    let price = this.props.singlePrice.USD;
+    let price = this.props.singlePrice.JPY;
     return <div>{price}</div>;
   }
 }

@@ -33,9 +33,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 1. Clone this project,`git clone ...`<br>
 
-2. Install independencies in root dir `npm install`<br>
+2. Checkout master branch `git checkout master`
 
-3. [Run other commands or do something else](#table-of-contents)
+3. Install independencies in root dir `npm install`<br>
+
+4. [Run other commands or do something else](#table-of-contents)
 
 ## Component Structure
 
@@ -277,6 +279,7 @@ GitHub Pages doesn’t support routers that use the HTML5 `pushState` history AP
 
 - [My API](https://github.com/Adrianacmy/capstone-API)
 - [CryptoCompare](https://min-api.cryptocompare.com/)
+- [CoinDesk](https://www.coindesk.com/api/)
 
 ## Licence
 
