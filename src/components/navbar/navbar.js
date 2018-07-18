@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import SearchForm from '../search/search_form';
 import { SideNavItem, SideNav } from 'react-materialize';
-import m from './m.jpg';
 import me from '../../assets/images/me.jpg';
 
 import { Navbar, NavItem, Modal } from 'react-materialize';
@@ -11,8 +10,12 @@ import { Navbar, NavItem, Modal } from 'react-materialize';
 export default () => {
   console.log(me);
   return (
-    <div className="purple">
-      <Navbar brand="enBazaar" right className="container purple z-depth-0">
+    <div className="blue darken-4">
+      <Navbar
+        brand="enBazaar"
+        right
+        className="container blue darken-4 z-depth-0"
+      >
         <SideNavItem
           userView
           user={{
@@ -20,7 +23,7 @@ export default () => {
             name: 'Bonnie Shen',
             email: 'Bonniek@gmail.com'
           }}
-          className="hide-on-med-and-up purple"
+          className="hide-on-med-and-up purple darken-2"
         />
 
         <NavItem className="hide-on-med-and-up">
