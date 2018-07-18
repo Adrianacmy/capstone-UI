@@ -17,6 +17,7 @@ By Adrianacmy
   - [npm run eject](#npm-run-eject)
 - [Known bugs](#known-bugs)
 - [Technologies Used](#Technologies-Used)
+- [Notes](#notes)
 - [Thanks](#thanks)
 - [Licence](#licence)
 
@@ -274,12 +275,16 @@ GitHub Pages doesn’t support routers that use the HTML5 `pushState` history AP
 - Dajngo restful framework
 - Django restful framework JWT
 
+## Notes
+
+- [Learn svg basic](https://www.w3schools.com/graphics/svg_path.asp)
 
 ## Thanks
 
 - [My API](https://github.com/Adrianacmy/capstone-API)
 - [CryptoCompare](https://min-api.cryptocompare.com/)
 - [CoinDesk](https://www.coindesk.com/api/)
+https://api.coinmarketcap.com/v1/ticker/bitcoin/
 
 ## Licence
 
