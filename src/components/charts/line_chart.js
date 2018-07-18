@@ -6,11 +6,8 @@ import { scaleTime, scaleLinear } from '@vx/scale';
 import { extent, max, bisector } from 'd3-array';
 import { timeFormat } from 'd3-time-format';
 
-const width = window.innerWidth / 2; //document.getElementById("mydiv").offsetWidth
+const width = window.innerWidth / 2;
 const height = window.innerHeight / 2;
-
-// document.getElementById('myElement').offse.top = 0; //or whatever
-//document.getElementById('myElement').offset.left = 0; // or whatever
 
 const formatDate = timeFormat("%b %d, '%y");
 const xSelector = d => new Date(d.date);

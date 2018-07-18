@@ -10,6 +10,7 @@ import promise from 'redux-promise';
 // import LineChart from './components/line_chart';
 import line_chart from './components/charts/line_chart';
 import info from './components/charts/info';
+import NavBar from './components/navbar/navbar';
 
 import rootReducer from './reducers';
 
@@ -19,7 +20,7 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(rootReducer)}>
     <HashRouter>
       <div>
-        <info />
+        <NavBar />
         <Switch>
           <Route path="/" exact component={line_chart} />
         </Switch>
