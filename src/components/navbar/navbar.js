@@ -10,11 +10,11 @@ import { Navbar, NavItem, Modal } from 'react-materialize';
 export default () => {
   console.log(me);
   return (
-    <div className="blue darken-4">
+    <div className="indigo darken-4">
       <Navbar
         brand="enBazaar"
         right
-        className="container blue darken-4 z-depth-0"
+        className="container indigo darken-4 z-depth-0"
       >
         <SideNavItem
           userView
@@ -23,7 +23,7 @@ export default () => {
             name: 'Bonnie Shen',
             email: 'Bonniek@gmail.com'
           }}
-          className="hide-on-med-and-up purple darken-2"
+          className="hide-on-med-and-up purple darken-3"
         />
 
         <NavItem className="hide-on-med-and-up">

@@ -1,9 +1,67 @@
+$small-screen-up: 601px !default;
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+
 #welcome {
   margin-top: 5rem;
 }
 
 #app-status{
-  margin-top: 2rem;
-  border: 1px #eeeeee solid;
+  margin-top: 5rem;
+  border: 1px #e0e0e0 solid;
   padding: 1.8rem;
+}
+
+#top-movers{
+  margin-top: 5rem;
+  .title-more{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    align-items: center
+  }
+}
+
+
+#recent-news{
+    margin-top: 5rem;
+
+  .card-box {
+    border-top: 1px #e0e0e0 solid;
+    padding-top: 2rem;
+  }
+  
+}
+
+#charts{
+  position: relative;
+  @media #{$medium-and-up} {
+    position: fixed;
+    left: 65%;
+    width: 20%;
+    top: 6%;
+}
+.hide-on-med-and-up{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem 1.6rem;
+}
+
+}
+
+
+#watchlist{
+  position: relative;
+  @media #{$medium-and-up} {
+    position: fixed;
+    left: 65%;
+    width: 20%;
+    top: 6%;
+}
+.hide-on-med-and-up{
+  // margin-top: 0.1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 1.6rem;
+}
+
 }
