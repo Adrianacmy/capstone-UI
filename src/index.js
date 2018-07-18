@@ -8,7 +8,8 @@ import promise from 'redux-promise';
 // import CurrentPrice from './components/current_price';
 // import DailyPrice from './components/daily_price';
 // import LineChart from './components/line_chart';
-import App from './App';
+import line_chart from './components/charts/line_chart';
+import info from './components/charts/info';
 
 import rootReducer from './reducers';
 
@@ -18,8 +19,9 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(rootReducer)}>
     <HashRouter>
       <div>
+        <info />
         <Switch>
-          <Route path="/" exact component={App} />
+          <Route path="/" exact component={line_chart} />
         </Switch>
       </div>
     </HashRouter>
