@@ -24,13 +24,12 @@ $medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
 
 
 #recent-news{
-    margin-top: 5rem;
+  margin-top: 20rem; 
 
   .card-box {
     border-top: 1px #e0e0e0 solid;
     padding-top: 2rem;
   }
-  
 }
 
 #charts{
@@ -43,7 +42,7 @@ $medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
 }
 .hide-on-med-and-up{
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
   padding: 1rem 1.6rem;
 }
 
@@ -52,16 +51,12 @@ $medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
 
 #watchlist{
   position: relative;
-  @media #{$medium-and-up} {
-    position: fixed;
-    left: 65%;
-    width: 20%;
-    top: 6%;
-}
-.hide-on-med-and-up{
-  // margin-top: 0.1rem;
-  margin-bottom: 2rem;
+ 
+  .hide-on-med-and-up{
+  margin-top: 2rem;
+  // margin-bottom: 2rem;
   padding: 1rem 1.6rem;
-}
+  }
 
 }
+

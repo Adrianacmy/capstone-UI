@@ -11,14 +11,14 @@ export default () => {
         <span>
           {' '}
           <a class="btn-floating btn-medium waves-effect waves-light indigo lighten-3">
-            <i class="material-icons">add</i>
+            <i className="material-icons">more_horiz</i>
           </a>
         </span>
       </div>
       <div className="card-box">
         <Col m={3} s={6}>
           <Card
-            className="purple lighten-5 hoverable"
+            className="grey lighten-5 hoverable"
             textClassName="grey-text"
             title="Card title"
             actions={[<a href="#">This is a link</a>]}
@@ -28,7 +28,7 @@ export default () => {
         </Col>
         <Col m={3} s={6}>
           <Card
-            className="blue lighten-5 hoverable"
+            className="grey lighten-5 hoverable"
             textClassName="grey-text"
             title="Card title"
             actions={[<a href="#">This is a link</a>]}
@@ -38,7 +38,7 @@ export default () => {
         </Col>
         <Col m={3} s={6}>
           <Card
-            className="purple lighten-5 hoverable"
+            className="grey lighten-5 hoverable"
             textClassName="grey-text"
             title="Card title"
             actions={[<a href="#">This is a link</a>]}
@@ -48,7 +48,7 @@ export default () => {
         </Col>
         <Col m={3} s={6}>
           <Card
-            className="blue lighten-5 hoverable"
+            className="grey lighten-5 hoverable"
             textClassName="grey-text"
             title="Card title"
             actions={[<a href="#">This is a link</a>]}

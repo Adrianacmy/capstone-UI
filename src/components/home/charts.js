@@ -11,6 +11,14 @@ export default () => {
         </a>
       </div>
       <ul className="collection z-depth-3">
+        <li className="collection-item hide-on-med-and-down">
+          <img src="images/yuna.jpg" alt="" className="circle" />
+          <span className="title">Cryptocurrencies</span>
+
+          <a href="#!" className="secondary-content">
+            <i className="material-icons">more_horiz</i>
+          </a>
+        </li>
         <li className="collection-item avatar">
           <img src="images/yuna.jpg" alt="" className="circle" />
           <span className="title">Title</span>

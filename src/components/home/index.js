@@ -21,12 +21,13 @@ export default () => {
           <TopMovers />
           <RecentNews />
         </Col>
+
         <Col id="charts" s={12} m={4} className="offset-m1">
           <Charts />
         </Col>
       </Row>
       <Row>
-        <Col s={12}>
+        <Col s={12} className="hide-on-med-and-up">
           <Watchlist />
         </Col>
       </Row>
