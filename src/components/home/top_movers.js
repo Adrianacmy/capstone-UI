@@ -22,7 +22,7 @@ export default () => {
             textClassName="grey-text"
             title="Card title"
             actions={[<a href="#">This is a link</a>]}
-            key="1233"
+            key="22231"
           >
             I am a very simple card.
           </Card>
@@ -33,7 +33,7 @@ export default () => {
             textClassName="grey-text"
             title="Card title"
             actions={[<a href="#">This is a link</a>]}
-            key="123345"
+            key="222531"
           >
             I am a very simple card.
           </Card>
@@ -44,7 +44,7 @@ export default () => {
             textClassName="grey-text"
             title="Card title"
             actions={[<a href="#">This is a link</a>]}
-            key="123783"
+            key="222315"
           >
             I am a very simple card.
           </Card>
@@ -55,7 +55,7 @@ export default () => {
             textClassName="grey-text"
             title="Card title"
             actions={[<a href="#">This is a link</a>]}
-            key="1278933"
+            key="2223157"
           >
             I am a very simple card.
           </Card>

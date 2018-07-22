@@ -15,6 +15,9 @@ import info from './components/charts/info';
 import NavBar from './components/navbar/navbar';
 import Home from './components/home';
 
+import Welcome from './components/auth/welcome';
+import Signup from './components/auth/signup';
+
 import rootReducer from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -26,6 +29,8 @@ ReactDOM.render(
         <NavBar />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/welcome" component={Welcome} />
+          <Route path="/singup" component={Signup} />
         </Switch>
       </div>
     </HashRouter>
