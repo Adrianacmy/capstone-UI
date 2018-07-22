@@ -1,10 +1,16 @@
-import React, { Component } from 'react';
+import React, {
+  Component
+} from '../../../../../../.cache/typescript/2.9/node_modules/@types/react';
 import { Line, Bar, LinePath } from '@vx/shape';
 import { withTooltip, Tooltip } from '@vx/tooltip';
 import { localPoint } from '@vx/event';
 import { scaleTime, scaleLinear } from '@vx/scale';
-import { extent, max, bisector } from 'd3-array';
-import { timeFormat } from 'd3-time-format';
+import {
+  extent,
+  max,
+  bisector
+} from '../../../../../../.cache/typescript/2.9/node_modules/@types/d3-array';
+import { timeFormat } from '../../../../../../.cache/typescript/2.9/node_modules/@types/d3-time-format';
 
 const width = window.innerWidth / 2;
 const height = window.innerHeight / 2;

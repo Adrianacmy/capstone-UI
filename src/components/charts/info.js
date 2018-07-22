@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {
+  Component
+} from '../../../../../../.cache/typescript/2.9/node_modules/@types/react';
+import { connect } from '../../../../../../.cache/typescript/2.9/node_modules/@types/react-redux';
 import { fetchCurrentPrice } from '../../actions';
-import _ from 'lodash';
+import _ from '../../../../../../.cache/typescript/2.9/node_modules/@types/lodash';
 
 class CurrentPrice extends Component {
   componentDidMount() {

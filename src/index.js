@@ -1,10 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import React from '../../../../.cache/typescript/2.9/node_modules/@types/react';
+import ReactDOM from '../../../../.cache/typescript/2.9/node_modules/@types/react-dom';
+import { Provider } from '../../../../.cache/typescript/2.9/node_modules/@types/react-redux';
+import {
+  createStore,
+  applyMiddleware
+} from '../../../../.cache/typescript/2.9/node_modules/redux';
 import reduxThunk from 'redux-thunk';
-import { Route, HashRouter, Switch } from 'react-router-dom';
-import promise from 'redux-promise';
+import {
+  Route,
+  HashRouter,
+  Switch
+} from '../../../../.cache/typescript/2.9/node_modules/@types/react-router-dom';
+import promise from '../../../../.cache/typescript/2.9/node_modules/@types/redux-promise';
 
 import './index.css';
 
