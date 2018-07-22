@@ -2,8 +2,9 @@ import React, {
   Component
 } from '../../../../../../.cache/typescript/2.9/node_modules/@types/react';
 import welcome from '../../assets/images/welcome.png';
+import requiredAuth from '../requiredAuth';
 
-export default () => {
+function Watchlist() {
   return (
     <div id="watchlist">
       <div className="hide-on-med-and-up">
@@ -104,4 +105,6 @@ export default () => {
       </ul>
     </div>
   );
-};
+}
+
+export default requiredAuth(Watchlist);

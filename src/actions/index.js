@@ -19,11 +19,22 @@ export const signup = (formProps, callback) =>
         'http://enbazaar.herokuapp.com/accounts/register',
         formProps
       );
-      dispatch({ type: AUTH_USER, payload: response.data.token }), callback();
+      dispatch({ type: AUTH_USER, payload: response.data.token }),
+        localStorage.setItem('token', response.data.token);
+      callback();
     } catch (e) {
       dispatch({ type: AUTH_ERROR, payload: 'invalid email' });
     }
   };
+
+export const signout = () => {
+  localStorage.removeItem('token');
+
+  return {
+    type: AUTH_USER,
+    payload: ''
+  };
+};
 
 export function fetchCurrentPrice() {
   const url = 'https://api.coinmarketcap.com/v1/ticker/bitcoin/';

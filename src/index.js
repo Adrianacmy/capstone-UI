@@ -25,11 +25,16 @@ import Home from './components/home';
 
 import Welcome from './components/auth/welcome';
 import Signup from './components/auth/signup';
+import SingOut from './components/auth/singout';
 
 import rootReducer from './reducers';
 
 // const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
-const store = createStore(rootReducer, {}, applyMiddleware(reduxThunk));
+const store = createStore(
+  rootReducer,
+  { auth: { authenticated: localStorage.getItem('token') } },
+  applyMiddleware(reduxThunk)
+);
 
 ReactDOM.render(
   <Provider store={store}>
@@ -39,7 +44,8 @@ ReactDOM.render(
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/welcome" component={Welcome} />
-          <Route path="/singup" component={Signup} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/signout" component={SingOut} />
         </Switch>
       </div>
     </HashRouter>
