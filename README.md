@@ -279,7 +279,7 @@ GitHub Pages doesn’t support routers that use the HTML5 `pushState` history AP
 
 - [Learn svg basic](https://www.w3schools.com/graphics/svg_path.asp)
 - Learn auth
-  - 
+  - redux-promise vs redux-thunk
 
 ## Thanks
 

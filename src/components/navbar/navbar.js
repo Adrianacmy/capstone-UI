@@ -1,11 +1,17 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-import SearchForm from '../search/search_form';
-import { SideNavItem, SideNav } from 'react-materialize';
-import me from '../../assets/images/me.jpg';
+import {
+  SideNavItem,
+  SideNav,
+  Navbar,
+  NavItem,
+  Modal
+} from 'react-materialize';
 
-import { Navbar, NavItem, Modal } from 'react-materialize';
+import SearchForm from '../search/search_form';
+
+import me from '../../assets/images/me.jpg';
 
 export default () => {
   console.log(me);
