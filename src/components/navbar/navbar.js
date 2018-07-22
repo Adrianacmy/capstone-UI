@@ -36,7 +36,7 @@ export default () => {
             </div>
           </Modal>
         </NavItem>
-        <NavItem devider className="grey hide-on-med-and-up">
+        <NavItem className="grey hide-on-med-and-up">
           <i className="material-icons">local_florist</i>Portfolio
         </NavItem>
         <SideNavItem href="#!icon" className="hide-on-med-and-up">
@@ -53,10 +53,10 @@ export default () => {
         </SideNavItem>
 
         <NavItem href="#" className="hide-on-med-and-up">
-          <i class="fas fa-cog" />Setting
+          <i className="fas fa-cog" />Setting
         </NavItem>
         <NavItem href="components.html" className="hide-on-med-and-up">
-          <i class="fas fa-question" />Help
+          <i className="fas fa-question" />Help
         </NavItem>
 
         <div className="hide-on-med-and-down right">
