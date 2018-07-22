@@ -29,7 +29,7 @@ export default () => {
             name: 'Bonnie Shen',
             email: 'Bonniek@gmail.com'
           }}
-          className="hide-on-med-and-up purple darken-3"
+          className="hide-on-med-and-up orange"
         />
 
         <NavItem className="hide-on-med-and-up">
