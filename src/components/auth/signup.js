@@ -15,7 +15,9 @@ import { Row, Input } from 'react-materialize';
 class Signup extends Component {
   onSubmit = formProps => {
     console.log(formProps);
-    this.props.signup(formProps);
+    this.props.signup(formProps, () => {
+      this.props.history.push('/');
+    });
   };
 
   render() {
@@ -40,6 +42,7 @@ class Signup extends Component {
             autoCoplete="none"
           />
         </Row>
+        {this.props.errorMessage}
         <button type="submit">signup</button>
       </form>
     );
@@ -48,9 +51,13 @@ class Signup extends Component {
 
 // compose: apply mutiple higher order components to signle component with better syntax
 
+function mapStateToProps(state) {
+  return { errorMessage: state.auth.errorMessage };
+}
+
 export default compose(
   connect(
-    null,
+    mapStateToProps,
     actions.signup
   ),
   reduxForm({ form: 'signup' })

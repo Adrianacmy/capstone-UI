@@ -8,17 +8,21 @@ export const DAILY_PRICE = 'daily_price';
 
 //redux-promise can only return one object
 
-export const signup = formProps =>
+export const signup = (formProps, callback) =>
   //redux thunk allow to return different value types from action creator
   // can return an object or a function
   // if return a function, it will be auto dispatched
   // it can return as many actions as I want, as many times as I want
   async dispatch => {
-    const response = await axios.post(
-      'http://enbazaar.herokuapp.com/accounts/register',
-      formProps
-    );
-    dispatch({ type: AUTH_USER, payload: response.data.token });
+    try {
+      const response = await axios.post(
+        'http://enbazaar.herokuapp.com/accounts/register',
+        formProps
+      );
+      dispatch({ type: AUTH_USER, payload: response.data.token }), callback();
+    } catch (e) {
+      dispatch({ type: AUTH_ERROR, payload: 'invalid email' });
+    }
   };
 
 export function fetchCurrentPrice() {
