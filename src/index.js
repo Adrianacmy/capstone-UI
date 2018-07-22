@@ -25,7 +25,8 @@ import Home from './components/home';
 
 import Welcome from './components/auth/welcome';
 import Signup from './components/auth/signup';
-import SingOut from './components/auth/singout';
+import SignOut from './components/auth/singout';
+import SignIn from './components/auth/singout';
 
 import rootReducer from './reducers';
 
@@ -45,7 +46,8 @@ ReactDOM.render(
           <Route path="/" exact component={Home} />
           <Route path="/welcome" component={Welcome} />
           <Route path="/signup" component={Signup} />
-          <Route path="/signout" component={SingOut} />
+          <Route path="/signout" component={SignOut} />
+          <Route path="/signin" component={SignIn} />
         </Switch>
       </div>
     </HashRouter>
