@@ -10,6 +10,7 @@ import { Row, Input } from 'react-materialize';
 class Signup extends Component {
   onSubmit = formProps => {
     console.log(formProps);
+    this.props.signup(formProps);
   };
 
   render() {
@@ -40,4 +41,12 @@ class Signup extends Component {
   }
 }
 
-export default reduxForm({ form: 'signup' })(Signup);
+// compose: apply mutiple higher order components to signle component with better syntax
+
+export default compose(
+  connect(
+    null,
+    actions.signup
+  ),
+  reduxForm({ form: 'signup' })
+)(Signup);
