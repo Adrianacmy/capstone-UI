@@ -282,6 +282,8 @@ GitHub Pages doesn’t support routers that use the HTML5 `pushState` history AP
   - redux-promise vs redux-thunk
   - cors is implemented by browser
 - middleware: inspection action
+- tv4: validation json 
+- [generate jsonschema](https://www.jsonschema.net/)
 
 
 ## Thanks
