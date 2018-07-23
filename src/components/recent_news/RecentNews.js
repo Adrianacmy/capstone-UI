@@ -36,9 +36,7 @@ class RecentNews extends React.Component {
                           header={<CardTitle image={news.imageurl} />}
                           className="z-depth-0"
                         >
-                          <p className="flow-text">
-                            {news.body.substr(0, 120)}
-                          </p>
+                          <p>{news.body.substr(0, 320)}</p>
                         </Card>
                       </a>
                     </Col>

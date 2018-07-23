@@ -58,8 +58,8 @@ export default props => {
         <td>chart</td>
         <td>
           {' '}
-          <a class="btn-floating btn-small waves-effect waves-light orange">
-            <i class="material-icons">add</i>
+          <a className="btn-floating btn-small waves-effect waves-light orange">
+            <i className="material-icons">add</i>
           </a>
         </td>
       </tr>

@@ -18,6 +18,7 @@ import Welcome from './components/auth/welcome';
 import Signup from './components/auth/signup';
 import SignOut from './components/auth/singout';
 import SignIn from './components/auth/singout';
+import ChartDetail from './components/chart_detail_price/index';
 import async from './middlewares/async';
 
 import rootReducer from './reducers';
@@ -40,6 +41,7 @@ ReactDOM.render(
           <Route path="/signup" component={Signup} />
           <Route path="/signout" component={SignOut} />
           <Route path="/signin" component={SignIn} />
+          <Route path="/chartdetail" component={ChartDetail} />
         </Switch>
       </div>
     </HashRouter>

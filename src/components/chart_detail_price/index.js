@@ -15,22 +15,21 @@ const ySelector = d => d.price;
 
 const bisectDate = bisector(xSelector).left;
 
-class App extends Component {
+class ChartDetail extends Component {
   state = {
     data: null
   };
   async componentDidMount() {
     const res = await fetch(
-      'https://api.coindesk.com/v1/bpi/historical/close.json'
+      'https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=100'
     );
     const data = await res.json();
 
     this.setState({
-      // return array of ojbect
-      data: Object.keys(data.bpi).map(date => {
+      data: data.Data.map(item => {
         return {
-          date,
-          price: data.bpi[date]
+          date: item.time,
+          price: item.close
         };
       })
     });
@@ -82,9 +81,9 @@ class App extends Component {
     });
 
     return (
-      <div>
+      <div className="container">
         <svg width={width} height={height}>
-          <rect x={0} y={0} width={width} height={height} fill="#32deaa" />
+          <rect x={0} y={0} width={width} height={height} fill="blue" />
           <LinePath
             data={data}
             xScale={xScale}
@@ -148,7 +147,7 @@ class App extends Component {
           <div>
             <Tooltip
               top={tooltipTop - 12}
-              left={tooltipLeft + 12}
+              left={tooltipLeft + 200}
               style={{
                 backgroundColor: '#5C77EB',
                 color: '#FFF'
@@ -172,4 +171,4 @@ class App extends Component {
   }
 }
 
-export default withTooltip(App);
+export default withTooltip(ChartDetail);
