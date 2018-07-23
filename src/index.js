@@ -18,6 +18,7 @@ import Welcome from './components/auth/welcome';
 import Signup from './components/auth/signup';
 import SignOut from './components/auth/singout';
 import SignIn from './components/auth/singout';
+import async from './middlewares/async';
 
 import rootReducer from './reducers';
 
@@ -25,7 +26,7 @@ import rootReducer from './reducers';
 const store = createStore(
   rootReducer,
   { auth: { authenticated: localStorage.getItem('token') } },
-  applyMiddleware(reduxThunk)
+  applyMiddleware(reduxThunk, async)
 );
 
 ReactDOM.render(

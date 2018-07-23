@@ -1,102 +1,65 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import welcome from '../../assets/images/welcome.png';
+import { fetchNews } from '../../actions/index';
 
 import { Col, Card, CardTitle, Row } from 'react-materialize';
 
-export default () => {
-  return (
-    <div id="recent-news" className="hide-on-small-and-down">
-      <h4>Recent News</h4>
-      <div className="card-box">
-        <Row>
-          <Col>
-            <Card
-              horizontal
-              header={<CardTitle image={welcome} />}
-              actions={[<a href="#">This is a link</a>]}
-              className="z-depth-0"
-            >
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information
-              </p>
-            </Card>
-          </Col>
-        </Row>
-        <br />
-        <br />
-        <Row>
-          <Col>
-            <Card
-              horizontal
-              header={<CardTitle image={welcome} />}
-              actions={[<a href="#">This is a link</a>]}
-              className="z-depth-0"
-            >
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information
-              </p>
-            </Card>
-          </Col>
-        </Row>
-        <br />
-        <br />
+class RecentNews extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-        <Row>
-          <Col>
-            <Card
-              horizontal
-              header={<CardTitle image={welcome} />}
-              actions={[<a href="#">This is a link</a>]}
-              className="z-depth-0"
-            >
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information
-              </p>
-            </Card>
-          </Col>
-        </Row>
-        <br />
-        <br />
+  componentDidMount() {
+    this.props.fetchNews();
+  }
 
-        <Row>
-          <Col>
-            <Card
-              horizontal
-              header={<CardTitle image={welcome} />}
-              actions={[<a href="#">This is a link</a>]}
-              className="z-depth-0"
-            >
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information
-              </p>
-            </Card>
-          </Col>
-        </Row>
-        <br />
-        <br />
+  render() {
+    const { recentNews } = this.props;
+    console.log(recentNews);
+    if (recentNews) {
+      return (
+        <div id="recent-news" className="hide-on-small-and-down">
+          <h4>Recent News</h4>
+          <div className="card-box">
+            {recentNews.map(news => {
+              return (
+                <Row>
+                  <Col>
+                    <a href={news.url}>
+                      <Card
+                        actions={[
+                          <a href={news.url}>{news.title.substr(0, 40)}</a>
+                        ]}
+                        horizontal
+                        header={<CardTitle image={news.imageurl} />}
+                        className="z-depth-0"
+                      >
+                        <p className="flow-text">{news.body.substr(0, 120)}</p>
+                      </Card>
+                    </a>
+                  </Col>
+                </Row>
+              );
+            })}
+            <br />
+            <br />
+          </div>
+        </div>
+      );
+    }
+  }
+}
 
-        <Row>
-          <Col>
-            <Card
-              horizontal
-              header={<CardTitle image={welcome} />}
-              actions={[<a href="#">This is a link</a>]}
-              className="z-depth-0"
-            >
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information
-              </p>
-            </Card>
-          </Col>
-        </Row>
-        <br />
-        <br />
-      </div>
-    </div>
-  );
+const mapStateToProps = state => {
+  console.log(state.recentNews);
+  return {
+    recentNews: state.recentNews
+  };
 };
+
+export default connect(
+  mapStateToProps,
+  { fetchNews }
+)(RecentNews);
