@@ -34,7 +34,7 @@ class Home extends React.Component {
           </Col>
 
           <Col id="charts" s={12} m={4} className="offset-m1">
-            <Charts />
+            <Charts topMovers={topMovers} />
           </Col>
         </Row>
         <Row>
