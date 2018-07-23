@@ -1,6 +1,9 @@
 $small-screen-up: 601px !default;
 $medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
 
+// a{
+//   color: grey;
+// }
 #welcome {
   margin-top: 5rem;
 }

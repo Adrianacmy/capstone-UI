@@ -6,8 +6,8 @@ import { scaleTime, scaleLinear } from '@vx/scale';
 import { extent, max, bisector } from 'd3-array';
 import { timeFormat } from 'd3-time-format';
 
-const width = window.innerWidth / 2; //document.getElementById("mydiv").offsetWidth
-const height = window.innerHeight / 2;
+const width = window.innerWidth; //document.getElementById("mydiv").offsetWidth
+const height = window.innerHeight * 0.6;
 
 const formatDate = timeFormat("%b %d, '%y");
 const xSelector = d => new Date(d.date);
@@ -81,7 +81,7 @@ class ChartDetail extends Component {
     });
 
     return (
-      <div className="container">
+      <div id="oneChart">
         <svg width={width} height={height}>
           <rect x={0} y={0} width={width} height={height} fill="blue" />
           <LinePath
@@ -146,8 +146,8 @@ class ChartDetail extends Component {
         {tooltipData && (
           <div>
             <Tooltip
-              top={tooltipTop - 12}
-              left={tooltipLeft + 200}
+              top={tooltipTop - 50}
+              left={tooltipLeft + 10}
               style={{
                 backgroundColor: '#5C77EB',
                 color: '#FFF'
@@ -156,7 +156,7 @@ class ChartDetail extends Component {
               {`$${ySelector(tooltipData)}`}
             </Tooltip>
             <Tooltip
-              top={yMax - 30}
+              top={yMax}
               left={tooltipLeft}
               style={{
                 transform: 'translateX(-50%)'
