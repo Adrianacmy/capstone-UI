@@ -281,6 +281,8 @@ GitHub Pages doesn’t support routers that use the HTML5 `pushState` history AP
 - Learn auth
   - redux-promise vs redux-thunk
   - cors is implemented by browser
+- middleware: inspection action
+
 
 ## Thanks
 
