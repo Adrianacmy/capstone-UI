@@ -3,7 +3,44 @@ import welcome from '../../assets/images/welcome.png';
 
 import { Col, Card } from 'react-materialize';
 
-export default () => {
+class App extends Component {
+  state = {
+    changes: []
+  };
+
+  async componentDidMount() {
+    const res = await fetch(
+      `https://api.coinmarketcap.com/v1/ticker/${symbol}/`
+    );
+    const data = await res.json();
+
+    this.setState({
+      // return array of ojbect
+      data: Object.keys(data.bpi).map(date => {
+        return {
+          date,
+          price: data.bpi[date]
+        };
+      })
+    });
+  }
+}
+
+export default props => {
+  console.log(props);
+  let movers = [];
+  props.topMovers.map(mover => {
+    movers.push(mover.CoinInfo.FullName);
+  });
+  // console.log(movers);
+  async function fetchChanges(symble) {
+    const res = await fetch(
+      `https://api.coinmarketcap.com/v1/ticker/${symbol}/`
+    );
+    const data = await res.json();
+    this.setState({});
+  }
+
   return (
     <div id="top-movers" className="hide-on-small-and-down">
       <div className="title-more">

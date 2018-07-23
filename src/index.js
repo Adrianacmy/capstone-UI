@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 import { Route, HashRouter, Switch } from 'react-router-dom';
-// import promise from 'redux-promise';
+import promise from 'redux-promise';
 
 import './index.css';
 
@@ -26,7 +26,7 @@ import rootReducer from './reducers';
 const store = createStore(
   rootReducer,
   { auth: { authenticated: localStorage.getItem('token') } },
-  applyMiddleware(reduxThunk, async)
+  applyMiddleware(reduxThunk, promise)
 );
 
 ReactDOM.render(

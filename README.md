@@ -292,6 +292,8 @@ GitHub Pages doesn’t support routers that use the HTML5 `pushState` history AP
 - [CryptoCompare](https://min-api.cryptocompare.com/)
 - [CoinDesk](https://www.coindesk.com/api/)
 https://api.coinmarketcap.com/v1/ticker/bitcoin/
+- signle coin changes: https://api.coinmarketcap.com/v1/ticker/Bitcoin/
+- toplist by volume : https://min-api.cryptocompare.com/data/top/totalvol?limit=30&tsym=USD
 
 ## Licence
 

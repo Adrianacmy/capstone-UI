@@ -17,31 +17,34 @@ class RecentNews extends React.Component {
 
   render() {
     const { recentNews } = this.props;
-    console.log(recentNews);
     if (recentNews) {
       return (
         <div id="recent-news" className="hide-on-small-and-down">
           <h4>Recent News</h4>
           <div className="card-box">
             {recentNews.map(news => {
-              return (
-                <Row>
-                  <Col>
-                    <a href={news.url}>
-                      <Card
-                        actions={[
-                          <a href={news.url}>{news.title.substr(0, 40)}</a>
-                        ]}
-                        horizontal
-                        header={<CardTitle image={news.imageurl} />}
-                        className="z-depth-0"
-                      >
-                        <p className="flow-text">{news.body.substr(0, 120)}</p>
-                      </Card>
-                    </a>
-                  </Col>
-                </Row>
-              );
+              if (news.title && news.body && news.imageurl && news.id) {
+                return (
+                  <Row key={news.id}>
+                    <Col>
+                      <a href={news.url}>
+                        <Card
+                          actions={[
+                            <a href={news.url}>{news.title.substr(0, 40)}</a>
+                          ]}
+                          horizontal
+                          header={<CardTitle image={news.imageurl} />}
+                          className="z-depth-0"
+                        >
+                          <p className="flow-text">
+                            {news.body.substr(0, 120)}
+                          </p>
+                        </Card>
+                      </a>
+                    </Col>
+                  </Row>
+                );
+              }
             })}
             <br />
             <br />
@@ -53,7 +56,6 @@ class RecentNews extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state.recentNews);
   return {
     recentNews: state.recentNews
   };

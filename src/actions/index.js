@@ -1,21 +1,20 @@
 import axios from 'axios';
 
-import { AUTH_USER, AUTH_ERROR, RECENT_NEWS } from './types';
+import { AUTH_USER, AUTH_ERROR, RECENT_NEWS, TOP_MOVERS } from './types';
 
 export const CURRENT_PRICE = 'current_price';
 export const DAILY_PRICE = 'daily_price';
-// export const_PRICE = 'daily_price';
 
-// export const fetchNews = () => {
-//   async dispatch => {
-//     try {
-//       const response = await axios.get('https://min-api.cryptocompare.com/data/v2/news/?lang=EN');
-//       dispatch({type: RECENT_NEWS, payload: response.data});
-//     } catch(e){
-//       dispatch({type: RECENT_NEWS, payload: 'no news'});
-//     }
-//   }
-// };
+export function fetchTopMovers() {
+  const url =
+    'https://min-api.cryptocompare.com/data/top/totalvol?limit=30&tsym=USD';
+  const request = axios.get(url);
+
+  return {
+    type: TOP_MOVERS,
+    payload: request
+  };
+}
 
 export function fetchNews() {
   const url = 'https://min-api.cryptocompare.com/data/v2/news/?lang=EN';
