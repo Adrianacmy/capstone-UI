@@ -1,15 +1,13 @@
-import React, {
-  Component
-} from '../../../../../../.cache/typescript/2.9/node_modules/@types/react';
+import React from 'react';
 
 import { Row, Col, Typography } from 'react-materialize';
 
-import Welcome from './welcome';
-import AppStatus from './application_status';
-import TopMovers from './top_movers';
-import RecentNews from './recent_news';
-import Charts from './charts';
-import Watchlist from './watchlist';
+import Welcome from '../welcome/Welcome';
+import AppStatus from '../application_status/ApplicationStatus';
+import TopMovers from '../top_movers/TopMovers';
+import RecentNews from '../recent_news/RecentNews';
+import Charts from '../charts_price/ChartsPrice';
+import Watchlist from '../watchlist/Watchlist';
 
 import './home.css';
 

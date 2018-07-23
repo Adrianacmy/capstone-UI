@@ -1,7 +1,4 @@
-import React, {
-  Component
-} from '../../../../../../.cache/typescript/2.9/node_modules/@types/react';
-import welcome from '../../assets/images/welcome.png';
+import React from 'react';
 
 export default () => {
   return (

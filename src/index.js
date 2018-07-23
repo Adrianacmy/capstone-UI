@@ -1,26 +1,17 @@
-import React from '../../../../.cache/typescript/2.9/node_modules/@types/react';
-import ReactDOM from '../../../../.cache/typescript/2.9/node_modules/@types/react-dom';
-import { Provider } from '../../../../.cache/typescript/2.9/node_modules/@types/react-redux';
-import {
-  createStore,
-  applyMiddleware
-} from '../../../../.cache/typescript/2.9/node_modules/redux';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
-import {
-  Route,
-  HashRouter,
-  Switch
-} from '../../../../.cache/typescript/2.9/node_modules/@types/react-router-dom';
-import promise from '../../../../.cache/typescript/2.9/node_modules/@types/redux-promise';
+import { Route, HashRouter, Switch } from 'react-router-dom';
+// import promise from 'redux-promise';
 
 import './index.css';
 
 // import CurrentPrice from './components/current_price';
 // import DailyPrice from './components/daily_price';
 // import LineChart from './components/line_chart';
-import line_chart from './components/charts/line_chart';
-import info from './components/charts/info';
-import NavBar from './components/navbar/navbar';
+import NavBar from './components/layouts/navbar/navbar';
 import Home from './components/home';
 
 import Welcome from './components/auth/welcome';

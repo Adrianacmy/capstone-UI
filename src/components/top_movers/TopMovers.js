@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from '../../../../../../.cache/typescript/2.9/node_modules/@types/react';
+import React from 'react';
 import welcome from '../../assets/images/welcome.png';
 
 import { Col, Card } from 'react-materialize';

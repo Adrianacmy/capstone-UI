@@ -1,12 +1,7 @@
-import React, {
-  Component
-} from '../../../../../../.cache/typescript/2.9/node_modules/@types/react';
-import {
-  reduxForm,
-  Field
-} from '../../../../../../.cache/typescript/2.9/node_modules/@types/redux-form';
-import { connect } from '../../../../../../.cache/typescript/2.9/node_modules/@types/react-redux';
-import { compose } from '../../../../../../.cache/typescript/2.9/node_modules/redux';
+import React, { Component } from 'react';
+import { reduxForm, Field } from 'redux-form';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 
 import * as actions from '../../actions';
 

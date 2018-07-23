@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { AUTH_USER } from './types';
+import { AUTH_USER, AUTH_ERROR } from './types';
 
 export const CURRENT_PRICE = 'current_price';
 export const DAILY_PRICE = 'daily_price';

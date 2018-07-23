@@ -1,7 +1,5 @@
-import React, {
-  Fragment
-} from '../../../../../../.cache/typescript/2.9/node_modules/@types/react';
-import { Link } from '../../../../../../.cache/typescript/2.9/node_modules/@types/react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import {
   SideNavItem,
@@ -11,9 +9,9 @@ import {
   Modal
 } from 'react-materialize';
 
-import SearchForm from '../search/search_form';
+import SearchForm from '../../search/search_form';
 
-import me from '../../assets/images/me.jpg';
+import me from '../../../assets/images/me.jpg';
 
 export default () => {
   console.log(me);
