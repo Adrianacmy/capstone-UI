@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import {
   Sparklines,
@@ -54,10 +55,12 @@ export default class OneSparkleChart extends React.Component {
     console.log(this.state);
     if (this.state.data) {
       return (
-        <Sparklines data={this.state.data}>
-          <SparklinesLine style={{ fill: 'none' }} color="blue" />
-          <SparklinesReferenceLine type="mean" />
-        </Sparklines>
+        <Link to={`/chart/${this.props.sym}`}>
+          <Sparklines data={this.state.data}>
+            <SparklinesLine style={{ fill: 'none' }} color="blue" />
+            <SparklinesReferenceLine type="mean" />
+          </Sparklines>
+        </Link>
       );
     } else {
       return 'loading...';

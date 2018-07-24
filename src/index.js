@@ -43,7 +43,7 @@ ReactDOM.render(
           <Route path="/signup" component={Signup} />
           <Route path="/signout" component={SignOut} />
           <Route path="/signin" component={SignIn} />
-          <Route path="/chart" component={Chart} />
+          <Route path="/chart/:sym" component={Chart} />
           <Route path="/charttitle" component={ChartTitle} />
         </Switch>
       </div>
