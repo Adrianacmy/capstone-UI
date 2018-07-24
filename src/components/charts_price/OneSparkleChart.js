@@ -9,45 +9,70 @@ import {
 } from 'react-sparklines';
 import { Tabs, Tab, Icon } from 'react-materialize';
 
-import { fetchDailyPrice } from '../../actions/index';
+// import { fetchDailyPrice } from '../../actions/index';
 
-class OneSparkleChart extends React.Component {
-  componentDidMount() {
-    console.log(this.props.sym);
-    this.props.fetchDailyPrice(this.props.sym);
+export default class OneSparkleChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null
+    };
   }
 
-  // formatData = () => {
-  //   // console.log(this.props.dailyPrice)
-  //   let priceArr = [];
-  //   let allPrice = this.props.dailyPrice;
-  //   if (allPrice[0]) {
-  //     allPrice[0].forEach((val, key) => {
-  //       priceArr.push(val.close);
-  //     });
-  //   }
-  //   return priceArr;
+  // componentDidMount() {
+  //   // console.log(this.props.sym);
+  //   this.props.fetchDailyPrice(this.props.sym);
+  //   const data = this.props.dailyPrice.sym
+  //   console.log(data)
+  //   this.setState({
+  //     data: data.map( coinPrice => {
+  //       return coinPrice[this.props.sym].close;
+  //     })
+  //   });
   // }
 
-  render() {
-    // console.log(this.formatData())
-    return (
-      <Sparklines data={this.props.dailyPrice.sym}>
-        <SparklinesLine style={{ fill: 'none' }} color="blue" />
-        <SparklinesReferenceLine type="mean" />
-      </Sparklines>
+  async componentDidMount() {
+    const res = await fetch(
+      `https://min-api.cryptocompare.com/data/histoday?fsym=${
+        this.props.sym
+      }&tsym=USD&limit=10`
     );
+    const data = await res.json();
+    // console.log(data.Data);
+
+    this.setState({
+      // return array of ojbect
+      data: data.Data.map(date => {
+        return date.close;
+      })
+    });
+  }
+
+  render() {
+    // const { sym, dailyPrice } = this.props;
+    // console.log(this.props.sym)
+    console.log(this.state);
+    if (this.state.data) {
+      return (
+        <Sparklines data={this.state.data}>
+          <SparklinesLine style={{ fill: 'none' }} color="blue" />
+          <SparklinesReferenceLine type="mean" />
+        </Sparklines>
+      );
+    } else {
+      return 'loading...';
+    }
   }
 }
 
-const mapStateToProps = state => {
-  console.log(state.dailyPrice);
-  return {
-    dailyPrice: state.dailyPrice
-  };
-};
+// const mapStateToProps = state => {
+//   // console.log(state.dailyPrice);
+//   return {
+//     dailyPrice: state.dailyPrice
+//   };
+// };
 
-export default connect(
-  mapStateToProps,
-  { fetchDailyPrice }
-)(OneSparkleChart);
+// export default connect(
+//   mapStateToProps,
+//   { fetchDailyPrice }
+// )(OneSparkleChart);

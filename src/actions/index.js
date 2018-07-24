@@ -11,10 +11,10 @@ import {
 export const CURRENT_PRICE = 'current_price';
 export const DAILY_PRICE = 'daily_price';
 
-export function fetchTopMovers() {
+export async function fetchTopMovers() {
   const url =
     'https://min-api.cryptocompare.com/data/top/totalvol?limit=30&tsym=USD';
-  const request = axios.get(url);
+  const request = await axios.get(url);
 
   return {
     type: TOP_MOVERS,
@@ -34,8 +34,6 @@ export function fetchNews() {
 
 export async function fetchDailyPrice(sym) {
   const url = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=10`;
-  console.log(url);
-
   const request = await axios.get(url);
 
   return {
