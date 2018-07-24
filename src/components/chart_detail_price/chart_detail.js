@@ -19,12 +19,20 @@ const bisectDate = bisector(xSelector).left;
 console.log(bisectDate);
 
 class ChartDetail extends Component {
-  state = {
-    data: null
-  };
+  constructor(props) {
+    console.log(props);
+    super(props);
+    this.state = {
+      data: null
+    };
+  }
   async componentDidMount() {
+    // console.log(this.props);
+
     const res = await fetch(
-      'https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=100'
+      `https://min-api.cryptocompare.com/data/histoday?fsym=${
+        this.props.sym
+      }&tsym=USD&limit=100`
     );
     const data = await res.json();
 

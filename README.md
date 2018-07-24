@@ -284,6 +284,8 @@ GitHub Pages doesn’t support routers that use the HTML5 `pushState` history AP
 - tv4: validation json 
 - [generate jsonschema](https://www.jsonschema.net/)
 - fetch daily price with a symble prameter is not working somehow????
+  - fetchCurrentPrice
+  - fetchDailyPrice
 
 
 ## Thanks

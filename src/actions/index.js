@@ -31,8 +31,8 @@ export function fetchNews() {
   };
 }
 
-export function fetchCurrentPrice() {
-  const url = 'https://api.coinmarketcap.com/v1/ticker/bitcoin/';
+export function fetchCurrentPrice(sym) {
+  const url = `https://api.coinmarketcap.com/v1/ticker/${sym}/`;
   const request = axios.get(url);
 
   return {

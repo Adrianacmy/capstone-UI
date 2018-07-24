@@ -8,6 +8,7 @@ import TiemPeriod from './time_period';
 
 export default class Chart extends React.Component {
   constructor(props) {
+    // console.log(props);
     super(props);
     this.state = {
       timePeriod: 'histominute',
@@ -26,10 +27,11 @@ export default class Chart extends React.Component {
   };
 
   render() {
+    const sym = this.props.match.params.sym;
     return (
       <div className="indigo darken-4">
-        <ChartTitle />
-        <ChartDetail />
+        <ChartTitle sym={sym} />
+        <ChartDetail sym={sym} />
 
         <TiemPeriod onHandleTabClick={this.handleTabClick} />
       </div>
