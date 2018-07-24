@@ -33,7 +33,7 @@ export default class Chart extends React.Component {
         <ChartTitle sym={sym} />
         <ChartDetail sym={sym} />
 
-        <TiemPeriod onHandleTabClick={this.handleTabClick} />
+        <TiemPeriod sym={sym} />
       </div>
     );
   }

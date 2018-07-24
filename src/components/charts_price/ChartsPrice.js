@@ -18,7 +18,7 @@ export default class ChartsPrice extends React.Component {
     this.props.topMovers.map(mover => {
       return localSymbles.push(mover.CoinInfo.Name);
     });
-    return localSymbles.slice(0, 5);
+    return localSymbles.slice(0, 10);
   };
 
   renderSymble = sym => {

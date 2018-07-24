@@ -67,7 +67,7 @@ export default class ChartTitle extends Component {
         <div className="container" id="cartTitle">
           <div className="row">
             <h4>{d.name.toUpperCase()}</h4> <h5>$ {d.price_usd} </h5>{' '}
-            {d.percent_change_1h}
+            {d.percent_change_1h} %
           </div>
         </div>
       );

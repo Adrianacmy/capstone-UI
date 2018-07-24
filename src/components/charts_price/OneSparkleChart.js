@@ -36,7 +36,7 @@ export default class OneSparkleChart extends React.Component {
     const res = await fetch(
       `https://min-api.cryptocompare.com/data/histoday?fsym=${
         this.props.sym
-      }&tsym=USD&limit=10`
+      }&tsym=USD&limit=365`
     );
     const data = await res.json();
     // console.log(data.Data);

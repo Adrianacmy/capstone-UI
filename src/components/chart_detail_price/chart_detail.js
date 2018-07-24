@@ -32,7 +32,7 @@ class ChartDetail extends Component {
     const res = await fetch(
       `https://min-api.cryptocompare.com/data/histoday?fsym=${
         this.props.sym
-      }&tsym=USD&limit=100`
+      }&tsym=USD&limit=365`
     );
     const data = await res.json();
 
@@ -160,7 +160,7 @@ class ChartDetail extends Component {
               top={tooltipTop - 50}
               left={tooltipLeft - 36}
               style={{
-                backgroundColor: '#5C77EB',
+                backgroundColor: '#ef6c00',
                 color: '#FFF'
               }}
             >
