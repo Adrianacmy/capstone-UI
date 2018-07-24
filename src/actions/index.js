@@ -82,7 +82,8 @@ export function fetchCurrentPrice() {
 
 export function fetchDailyPrice() {
   // const url = 'https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=10';
-  const url = 'https://api.coindesk.com/v1/bpi/historical/close.json';
+  const url =
+    'https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=10';
   const request = axios.get(url);
 
   return {

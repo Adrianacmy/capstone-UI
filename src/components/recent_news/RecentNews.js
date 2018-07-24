@@ -27,18 +27,16 @@ class RecentNews extends React.Component {
                 return (
                   <Row key={news.id}>
                     <Col>
-                      <a href={news.url}>
-                        <Card
-                          actions={[
-                            <a href={news.url}>{news.title.substr(0, 40)}</a>
-                          ]}
-                          horizontal
-                          header={<CardTitle image={news.imageurl} />}
-                          className="z-depth-0"
-                        >
-                          <p>{news.body.substr(0, 320)}</p>
-                        </Card>
-                      </a>
+                      <Card
+                        actions={[
+                          <a href={news.url}>{news.title.substr(0, 40)}</a>
+                        ]}
+                        horizontal
+                        header={<CardTitle image={news.imageurl} />}
+                        className="z-depth-0"
+                      >
+                        <p>{news.body.substr(0, 320)}</p>
+                      </Card>
                     </Col>
                   </Row>
                 );

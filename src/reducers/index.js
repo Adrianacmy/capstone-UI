@@ -8,7 +8,7 @@ import auth from './reducer_auth';
 
 const rootReducer = combineReducers({
   currentPrice: currentPrice,
-  data: dailyPrice,
+  dailyPrice,
   auth,
   recentNews,
   topMovers

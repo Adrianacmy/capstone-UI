@@ -1,61 +1,63 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { Tabs, Tab, Icon } from 'react-materialize';
 import { Sparklines, SparklinesLine, SparklinesSpots } from 'react-sparklines';
 
+import { fetchDailyPrice } from '../../actions/index';
+
+import ChartDetail from '../chart_detail_price/chart_detail';
 import './ChartsPrice.css';
 import welcome from '../../assets/images/welcome.png';
 
-export default props => {
-  const { topMovers } = props;
-  console.log(topMovers);
+class ChartsPrice extends React.Component {
+  constructor(props) {
+    super(props);
+    this.formatData = this.formatData.bind(this);
+    this.makeAChart = this.makeAChart.bind(this);
+  }
 
-  function getLocalSymbles() {
+  // const topMovers = this.props;
+  // console.log(topMovers);
+
+  componentDidMount() {
+    this.props.fetchDailyPrice();
+  }
+
+  getLocalSymbles = () => {
     let localSymbles = [];
-    topMovers.map(mover => {
+    this.props.topMovers.map(mover => {
       return localSymbles.push(mover.CoinInfo.Name);
     });
     return localSymbles.slice(0, 10);
+  };
+
+  formatData() {
+    let priceArr = [];
+    let allPrice = this.props.dailyPrice;
+    if (allPrice[0]) {
+      allPrice[0].forEach((val, key) => {
+        priceArr.push(val.close);
+      });
+    }
+    return priceArr;
   }
 
-  console.log(getLocalSymbles());
-
-  // function fetchPriceData(url){
-  //   if (!url){
-  //     url = 'https://api.coindesk.com/v1/bpi/currentprice.json';
-  //   }
-
-  //   const res = await fetch(url);
-  //   const data = await res.json();
-  //   data.bpi.map( data => {
-  //     data.bpi[date]
-  //   })
-
-  //   this.setState({
-  //     // return array of ojbect
-  //     data: Object.keys(data.bpi).map(date => {
-  //       return {
-  //         date,
-  //         price: data.bpi[date]
-  //       };
-  //     })
-  //   });
-  // }
-
-  function makeAChart(data) {
+  makeAChart() {
     return (
-      <Sparklines data={data}>
-        <SparklinesLine style={{ fill: 'none' }} />
-        <SparklinesSpots />
+      <Sparklines data={this.formatData()}>
+        <SparklinesLine style={{ fill: 'nonea' }} />
       </Sparklines>
     );
   }
 
-  function renderSymble(sym) {
+  renderSymble = sym => {
     return (
-      <tr>
-        &nbsp;&nbsp;&nbsp;<td>{sym}</td>
-        <td>chart</td>
+      <tr key={sym}>
+        <td>&nbsp;&nbsp;&nbsp;{sym}</td>
+        <td style={{ width: '50%', marginRight: '2rem' }}>
+          {this.makeAChart()}
+        </td>
         <td>
           {' '}
           <a className="btn-floating btn-small waves-effect waves-light orange">
@@ -64,33 +66,39 @@ export default props => {
         </td>
       </tr>
     );
-  }
+  };
 
-  return (
-    <div id="charts">
-      <div className="hide-on-med-and-up">
-        <span className="title">Cryptocurrencies</span>
-        <a href="#!" className="secondary-content">
-          <i className="material-icons">more_horiz</i>
-        </a>
+  render() {
+    // console.log(this.props.dailyPrice)
+    // console.log(this.formatData())
+    return (
+      <div id="charts">
+        <div className="hide-on-med-and-up">
+          <span className="title">Cryptocurrencies</span>
+          <a href="#!" className="secondary-content">
+            <i className="material-icons">more_horiz</i>
+          </a>
+        </div>
+
+        <table className="highlight z-depth-3">
+          <tbody>
+            {this.getLocalSymbles().map(sym => {
+              return this.renderSymble(sym);
+            })}
+          </tbody>
+        </table>
       </div>
+    );
+  }
+}
 
-      <table className="highlight z-depth-3">
-        <tbody>
-          {getLocalSymbles().map(sym => {
-            return renderSymble(sym);
-          })}
-        </tbody>
-      </table>
-
-      <Tabs className="tab-demo z-depth-1">
-        <Tab title="Test 1">Test 1</Tab>
-        <Tab title="Test 2" active>
-          Test 2
-        </Tab>
-        <Tab title="Test 3">Test 3</Tab>
-        <Tab title="Test 4">Test 4</Tab>
-      </Tabs>
-    </div>
-  );
+const mapStateToProps = state => {
+  // console.log(state.dailyPrice);
+  return {
+    dailyPrice: state.dailyPrice
+  };
 };
+export default connect(
+  mapStateToProps,
+  { fetchDailyPrice }
+)(ChartsPrice);

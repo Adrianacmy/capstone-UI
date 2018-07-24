@@ -25,7 +25,7 @@ export default props => {
       <div className="card-box">
         {localMovers.map(symbl => {
           return (
-            <Col m={3} s={6}>
+            <Col m={3} s={6} key={symbl.CoinInfo.Id}>
               <Card
                 className="grey lighten-5 hoverable"
                 textClassName="grey-text"
@@ -36,7 +36,7 @@ export default props => {
                     {symbl.ConversionInfo.TotalVolume24H.toFixed(2)}
                   </a>
                 ]}
-                key="22231"
+                key={symbl.CoinInfo.Id}
               >
                 {symbl.CoinInfo.FullName}
               </Card>
