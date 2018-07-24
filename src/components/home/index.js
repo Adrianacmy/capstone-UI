@@ -7,7 +7,7 @@ import Welcome from '../welcome/Welcome';
 import AppStatus from '../application_status/ApplicationStatus';
 import TopMovers from '../top_movers/TopMovers';
 import RecentNews from '../recent_news/RecentNews';
-import Charts from '../charts_price/ChartsPrice';
+import ChartsPrice from '../charts_price/ChartsPrice';
 import Watchlist from '../watchlist/Watchlist';
 
 import { fetchTopMovers } from '../../actions/index';
@@ -34,7 +34,7 @@ class Home extends React.Component {
           </Col>
 
           <Col id="charts" s={12} m={4} className="offset-m1">
-            <Charts topMovers={topMovers} />
+            <ChartsPrice topMovers={topMovers} />
           </Col>
         </Row>
         <Row>

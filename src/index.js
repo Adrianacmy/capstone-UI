@@ -29,7 +29,7 @@ import rootReducer from './reducers';
 const store = createStore(
   rootReducer,
   { auth: { authenticated: localStorage.getItem('token') } },
-  applyMiddleware(reduxThunk, promise)
+  applyMiddleware(promise, reduxThunk)
 );
 
 ReactDOM.render(

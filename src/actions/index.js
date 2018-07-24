@@ -1,6 +1,12 @@
 import axios from 'axios';
 
-import { AUTH_USER, AUTH_ERROR, RECENT_NEWS, TOP_MOVERS } from './types';
+import {
+  AUTH_USER,
+  AUTH_ERROR,
+  RECENT_NEWS,
+  TOP_MOVERS,
+  DAILY_PRICE_ERROR
+} from './types';
 
 export const CURRENT_PRICE = 'current_price';
 export const DAILY_PRICE = 'daily_price';
@@ -25,6 +31,30 @@ export function fetchNews() {
     payload: request
   };
 }
+
+export async function fetchDailyPrice(sym) {
+  const url = `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=10`;
+  console.log(url);
+
+  const request = await axios.get(url);
+
+  return {
+    type: DAILY_PRICE,
+    payload: request,
+    sym: sym
+  };
+}
+
+// export const fetchDailyPrice = (sym) => {
+//   async dispatch => {
+//     try {
+//       const response = await axios.get( `https://min-api.cryptocompare.com/data/histoday?fsym=${sym}&tsym=USD&limit=10`);
+//       dispatch({type: DAILY_PRICE, payload: response.data.Data, sym: sym});
+//     }catch (e) {
+//       dispatch({type: DAILY_PRICE_ERROR, payload: 'something is wrong' })
+//     }
+//   }
+// }
 
 //redux-promise can only return one object
 
@@ -76,18 +106,6 @@ export function fetchCurrentPrice() {
 
   return {
     type: CURRENT_PRICE,
-    payload: request
-  };
-}
-
-export function fetchDailyPrice() {
-  // const url = 'https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=10';
-  const url =
-    'https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=10';
-  const request = axios.get(url);
-
-  return {
-    type: DAILY_PRICE,
     payload: request
   };
 }

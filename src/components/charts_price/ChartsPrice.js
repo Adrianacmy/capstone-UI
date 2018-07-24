@@ -1,62 +1,63 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-import { Tabs, Tab, Icon } from 'react-materialize';
-import { Sparklines, SparklinesLine, SparklinesSpots } from 'react-sparklines';
-
-import { fetchDailyPrice } from '../../actions/index';
+// import { Tabs, Tab, Icon } from 'react-materialize';
+// import { Sparklines, SparklinesLine, SparklinesSpots } from 'react-sparklines';
 
 import ChartDetail from '../chart_detail_price/chart_detail';
 import './ChartsPrice.css';
 import welcome from '../../assets/images/welcome.png';
+import OneSparkleChart from './OneSparkleChart';
 
-class ChartsPrice extends React.Component {
+export default class ChartsPrice extends React.Component {
   constructor(props) {
     super(props);
-    this.formatData = this.formatData.bind(this);
-    this.makeAChart = this.makeAChart.bind(this);
+
+    // this.formatData = this.formatData.bind(this);
+    // this.makeAChart = this.makeAChart.bind(this);
   }
 
   // const topMovers = this.props;
   // console.log(topMovers);
 
-  componentDidMount() {
-    this.props.fetchDailyPrice();
-  }
+  // componentDidMount() {
+  //   this.props.fetchDailyPrice();
+  // }
 
   getLocalSymbles = () => {
     let localSymbles = [];
     this.props.topMovers.map(mover => {
       return localSymbles.push(mover.CoinInfo.Name);
     });
-    return localSymbles.slice(0, 10);
+    return localSymbles.slice(0, 3);
   };
 
-  formatData() {
-    let priceArr = [];
-    let allPrice = this.props.dailyPrice;
-    if (allPrice[0]) {
-      allPrice[0].forEach((val, key) => {
-        priceArr.push(val.close);
-      });
-    }
-    return priceArr;
-  }
+  // formatData() {
+  //   let priceArr = [];
+  //   let allPrice = this.props.dailyPrice;
+  //   if (allPrice[0]) {
+  //     allPrice[0].forEach((val, key) => {
+  //       priceArr.push(val.close);
+  //     });
+  //   }
+  //   return priceArr;
+  // }
 
-  makeAChart() {
-    return (
-      <Sparklines data={this.formatData()}>
-        <SparklinesLine style={{ fill: 'nonea' }} />
-      </Sparklines>
-    );
-  }
+  // makeAChart() {
+  //   return (
+  //     <Sparklines data={this.formatData()}>
+  //       <SparklinesLine style={{ fill: 'none' }} />
+  //     </Sparklines>
+  //   );
+  // }
 
   renderSymble = sym => {
+    // this.props.fetchDailyPrice(sym);
+    // console.log(this.props.dailyPrice);
     return (
       <tr key={sym}>
         <td>&nbsp;&nbsp;&nbsp;{sym}</td>
         <td style={{ width: '50%', marginRight: '2rem' }}>
-          {this.makeAChart()}
+          <OneSparkleChart sym={sym} />
         </td>
         <td>
           {' '}
@@ -91,14 +92,3 @@ class ChartsPrice extends React.Component {
     );
   }
 }
-
-const mapStateToProps = state => {
-  // console.log(state.dailyPrice);
-  return {
-    dailyPrice: state.dailyPrice
-  };
-};
-export default connect(
-  mapStateToProps,
-  { fetchDailyPrice }
-)(ChartsPrice);

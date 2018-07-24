@@ -20,10 +20,13 @@ export default function(state = [], action) {
   //   return sortedData;
   // }
 
+  // function formData(data){
+  //   const storedData = {};
+  // }
   switch (action.type) {
     case DAILY_PRICE:
-      // console.log(action.payload.data.Data);
-      return [...state, action.payload.data.Data];
+      // console.log(action.payload);
+      return [...state, { [action.sym]: action.payload.data.Data }];
     default:
       return state;
   }
