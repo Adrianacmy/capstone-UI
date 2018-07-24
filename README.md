@@ -280,10 +280,10 @@ GitHub Pages doesn’t support routers that use the HTML5 `pushState` history AP
 - [Learn svg basic](https://www.w3schools.com/graphics/svg_path.asp)
 - Learn auth
   - redux-promise vs redux-thunk
-  - cors is implemented by browser
 - middleware: inspection action
 - tv4: validation json 
 - [generate jsonschema](https://www.jsonschema.net/)
+- fetch daily price with a symble prameter is not working somehow????
 
 
 ## Thanks

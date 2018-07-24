@@ -11,48 +11,17 @@ import OneSparkleChart from './OneSparkleChart';
 export default class ChartsPrice extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.formatData = this.formatData.bind(this);
-    // this.makeAChart = this.makeAChart.bind(this);
   }
-
-  // const topMovers = this.props;
-  // console.log(topMovers);
-
-  // componentDidMount() {
-  //   this.props.fetchDailyPrice();
-  // }
 
   getLocalSymbles = () => {
     let localSymbles = [];
     this.props.topMovers.map(mover => {
       return localSymbles.push(mover.CoinInfo.Name);
     });
-    return localSymbles.slice(0, 3);
+    return localSymbles.slice(0, 2);
   };
 
-  // formatData() {
-  //   let priceArr = [];
-  //   let allPrice = this.props.dailyPrice;
-  //   if (allPrice[0]) {
-  //     allPrice[0].forEach((val, key) => {
-  //       priceArr.push(val.close);
-  //     });
-  //   }
-  //   return priceArr;
-  // }
-
-  // makeAChart() {
-  //   return (
-  //     <Sparklines data={this.formatData()}>
-  //       <SparklinesLine style={{ fill: 'none' }} />
-  //     </Sparklines>
-  //   );
-  // }
-
   renderSymble = sym => {
-    // this.props.fetchDailyPrice(sym);
-    // console.log(this.props.dailyPrice);
     return (
       <tr key={sym}>
         <td>&nbsp;&nbsp;&nbsp;{sym}</td>
@@ -70,8 +39,6 @@ export default class ChartsPrice extends React.Component {
   };
 
   render() {
-    // console.log(this.props.dailyPrice)
-    // console.log(this.formatData())
     return (
       <div id="charts">
         <div className="hide-on-med-and-up">

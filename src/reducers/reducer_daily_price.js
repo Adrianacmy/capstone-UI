@@ -1,4 +1,4 @@
-import { DAILY_PRICE } from '../actions';
+import { DAILY_PRICE } from '../actions/types';
 import moment from 'moment';
 
 export default function(state = [], action) {

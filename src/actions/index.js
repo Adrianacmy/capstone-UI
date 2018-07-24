@@ -5,11 +5,10 @@ import {
   AUTH_ERROR,
   RECENT_NEWS,
   TOP_MOVERS,
-  DAILY_PRICE_ERROR
+  DAILY_PRICE_ERROR,
+  CURRENT_PRICE,
+  DAILY_PRICE
 } from './types';
-
-export const CURRENT_PRICE = 'current_price';
-export const DAILY_PRICE = 'daily_price';
 
 export async function fetchTopMovers() {
   const url =
@@ -28,6 +27,16 @@ export function fetchNews() {
 
   return {
     type: RECENT_NEWS,
+    payload: request
+  };
+}
+
+export function fetchCurrentPrice() {
+  const url = 'https://api.coinmarketcap.com/v1/ticker/bitcoin/';
+  const request = axios.get(url);
+
+  return {
+    type: CURRENT_PRICE,
     payload: request
   };
 }
@@ -97,13 +106,3 @@ export const signout = () => {
     payload: ''
   };
 };
-
-export function fetchCurrentPrice() {
-  const url = 'https://api.coinmarketcap.com/v1/ticker/bitcoin/';
-  const request = axios.get(url);
-
-  return {
-    type: CURRENT_PRICE,
-    payload: request
-  };
-}
