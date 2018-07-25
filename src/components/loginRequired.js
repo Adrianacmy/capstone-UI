@@ -6,14 +6,14 @@
 //   class ComposedComponent extends Component {
 //     // unique code for other HOC
 //     componentDidMount() {
-//       this.shouldNavigateAway();
+//       this.loginRequired();
 //     }
 
 //     componentDidUpdate() {
-//       this.shouldNavigateAway();
+//       this.loginRequired();
 //     }
 
-//     shouldNavigateAway() {
+//     loginRequired() {
 //       if (!this.props.auth) {
 //         this.props.history.push('/');
 //       }
